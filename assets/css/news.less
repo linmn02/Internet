@@ -1,0 +1,408 @@
+/* banner */
+.banner{
+    position: relative;
+    &:hover .shade{
+        // display: block;
+        // opacity: 1;
+        // left: 0;
+        background: transparent;
+    }
+   .shade{
+        position:absolute;
+        top:0;
+        // bottom:0;
+        // left:-100%;
+        right:0;
+        width: 100%;
+        height: 100%;
+        background: rgba(23,69,124, .3);
+        transition: all ease-in .2s;
+        text-align: center;
+        padding: 10em 0em 3em;
+        // display: none;
+        // opacity: 0;
+        .shade-title{
+            color:#fff;
+            z-index: 10000;
+            font-size: 4em;
+            // font-weight: lighter;
+            font-family: OSBold;
+            
+            // margin-top: 3em;
+        }
+        .small-title{
+            color:#fff;
+            z-index: 10000;
+            font-size: 2em;
+        }
+        .info{
+            color: #fff;
+            font-size: 1.5em;
+        }
+        
+    }
+
+    @media screen and(max-width:900px) {
+        &{
+            .shade{
+                padding: 6em 0em 3em;
+                .shade-title{
+                    // margin-top: 1.5em;
+                    font-size: 2.5em;
+                }
+                .small-title{
+                    font-size: 1.5em;
+                }
+
+            }
+        }
+    }
+
+    @media screen and(max-width:700px){
+        &{
+            .shade{
+                padding: 5em 0em 3em;
+                .shade-title{
+                    // margin-top: 1.5em;
+                    font-size: 2em;
+                }
+                .small-title{
+                    font-size: 1.3em;
+                }
+                
+            }
+        }
+    }
+    @media screen and(max-width:550px){
+        &{
+            .shade{
+                padding: 3em 0em 3em;
+                .shade-title{
+                    // margin-top: 1.5em;
+                    font-size: 1.5em;
+                }
+                .small-title{
+                    font-size: 1em;
+                }
+                .info{
+                    font-size: .8em;
+                }
+                
+            }
+        }
+    }
+
+    @media screen and(max-width:380px){
+        &{
+            .shade{
+                padding: 2em 0em 2em;
+                .shade-title{
+                    // margin-top: 1.5em;
+                    font-size: 1em;
+                }
+                .small-title{
+                    font-size: .8em;
+                }
+                
+            }
+        }
+    }
+
+    
+}
+
+/* 新闻列表 */
+.newslist{
+    padding: 6em 0em;
+    
+   
+
+    .box{
+        height: 1300px;
+        position: relative;
+        
+        input{
+            display: none;
+        }
+        input:checked + .list{
+            opacity: 1;
+            z-index: 10000;
+        }
+        #first:checked ~ .btn-list label[for="first"],#second:checked ~ .btn-list  label[for="second"],#thirdly:checked ~ .btn-list  label[for="thirdly"]{
+            background-color:#1158e8;
+            transform: translateY(-5px);
+            box-shadow: 3px 5px 10px #1158e8;
+        }
+        .list{
+            position: absolute;
+            width: 100%;
+            top: 5%;
+            background: #fff;
+            // opacity: 0;
+            z-index: -1;
+            overflow: hidden;
+            .item{
+                display: flex;
+                justify-content: space-around;
+                margin-top: 2em;
+                .left{
+                    img{
+                        width: 100%;
+                    }
+                }
+                .right{
+                    width: 90%;
+                    padding: 1em 2em;
+                    .title{
+                        font-size: 2.2em;
+                        font-weight: bold;
+                    }
+                    .content{
+                        font-size: 1.2em;
+                        color: #8a8484;
+                    }
+                    .more{
+                        width: 12em;
+                        height: 3em;
+                        background: #1158e8;
+                        line-height: 3em;
+                        text-align: center;
+                        margin-top: 2em;
+                        transition: all .3s linear;
+                        cursor: pointer;
+                        &:hover{
+                            transform: translateY(-5px);
+                            border-radius: 10px;
+                            box-shadow: 3px 5px 10px #1158e8;
+                        }
+                        a{
+                            color: #fff;
+                            font-size: 1.8em;
+                        }
+                    }
+                }
+            }
+        }
+        .btn-list{
+            display: flex;
+            justify-content: center;
+            label{
+                text-align: center;
+                display: block;
+                cursor: pointer;
+                font-size: 1.5em;
+                width: 8em;
+                height: 2em;
+                border-radius: 10px;
+                line-height: 2em;
+                margin: 0em 1em;
+                padding-bottom: 2em;
+                transition: all .3s linear;
+            }
+        }
+    }
+
+    @media screen and(max-width:1200px) {
+        &{
+            .box{
+                .list{
+                    .item{
+                        flex-shrink: 0;
+                        .right{
+                            width: 70%;
+                            padding-top: .5em;
+                            .title{
+                                font-size: 2em;
+                               
+                            }
+                            .content{
+                                font-size: 1.2em;
+                            }
+                            .more{
+                                margin-top: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and(max-width:1000px) {
+        &{
+            .box{
+                height: 1200px;
+                .list{
+                    .item{
+                        .right{
+                            padding: .5em 1em;
+                            .title{
+                                font-size: 1.3em;
+                            }
+                            .content{
+                                font-size: .9em;
+                            }
+                            .more{
+                                width: 10em;
+                                height: 2em;
+                                line-height: 2em;
+        
+                                a{
+                                    font-size: 1.2em;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    @media screen and(max-width:680px) {
+        &{
+            .box{
+                .list{
+                    .item{
+                        display: inline-block;
+                        position: relative;
+                        
+                        &:hover .right{
+                            left: 0;
+                            background: rgba(23,69,124, .3);
+                        }
+                        .right{
+                            position: absolute;
+                            top: 0;
+                            left: -100%;
+                            padding: .5em 0em;
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            padding: 3em 0em;
+                            transition: all .3s linear;
+                            .title{
+                                font-size: 2em;
+                                color: #fff;
+                                
+                            }
+                            .content{
+                                font-size: 1.3em;
+                                padding: 0em 1em;
+                            }
+                            .more{
+                                border-radius: 10px;
+                                margin: 0 auto;
+                                margin-top: 1em;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    @media screen and(max-width:550px) {
+        &{
+            .box{
+                .list{
+                    .item{
+                        .right{
+                            .title{
+                                font-size:1.5em ;
+                            }
+                            .content{
+                                font-size: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and(max-width:450px) {
+        &{
+            .box{
+                height: 1100px;
+                .list{
+                    .item{
+                        margin-top: 1.5em 0em ;
+                        .right{
+                            padding: 1em 0em;
+                            .title{
+                                font-size:1em ;
+                            }
+                            .content{
+                                font-size: .7em;
+                            }
+                        }
+                    }
+                }
+                .btn-list{
+                    label{
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and(max-width:380px) {
+        &{
+            .box{
+                height: 1000px;
+                .list{
+                    .item{
+                        margin-top: 2em;
+                        .right{
+                            padding:.5em 0em  0em;
+                            .title{
+                                font-size:.8em ;
+                            }
+                            .content{
+                                font-size: .4em;
+                            }
+                            .more{
+                                width: 8em;
+                                margin-top: .5em;
+                                a{
+                                    font-size: .9em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and(max-width:350px) {
+        &{
+            .box{
+                height: 800px;
+                .list{
+                    .item{
+                        .right{
+                            padding:1em 0em ;
+                            .title{
+                                font-size:1em ;
+                                padding: 1em;
+                            }
+                            .content{
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                            .more{
+                                width: 8em;
+                                margin-top: 2em;
+                                a{
+                                    font-size: .6em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
